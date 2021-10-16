@@ -8,7 +8,7 @@ https://user-images.githubusercontent.com/66232436/137519267-28e84332-e228-4c56-
 발생하는 문제
 로그인 창 바깥 화면을 클릭하였을 때, 로그인 창이 꺼지도록 하기 위해
 
-로그인 창 바깥 화면에 해당하는 상위 div에 onClick이벤트로 로그인 창을 켜고 끄는 함수인 handleLogin을 걸어준다.
+로그인 창 바깥 화면에 해당하는 상위 div에 onClick이벤트로 로그인 창을 켜고 끄는  signIn 상태를 false로 변경한다.
 
 그것이 아래 코드인데, 여기서 문제가 발생한다.
 ```react
