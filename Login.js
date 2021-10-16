@@ -4,9 +4,7 @@ import SignUp from './SignUp';
 function Login() {
     const [signIn,setSignIn] = useState(false);
     console.log(signIn)
-    const handleLogin = () => {
-        setSignIn(!signIn)
-    }
+   
     return (
         <div className = 'login'>
             <div className = 'login__header'>
@@ -18,9 +16,7 @@ function Login() {
                 </button>
             </div>
             {/* onClick으로 signin 상태 변화 */}
-            <div className = 'login__body' 
-            onClick = {handleLogin}
-            >
+            <div className = 'login__body' onClick = {()=>{setSignIn(false)}}>
                 {
                     signIn ? (<SignUp onClick = {(e)=>e.stopPropagation()}/>) : (
                         <>
@@ -28,7 +24,7 @@ function Login() {
                         <h2>다양한 디바이스에서 시청하세요. 언제든 해지하실 수 있습니다.</h2>
                         <h3>시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하시려면 이메일 주소를 입력하세요.</h3>
                         {/* onSubmit으로 signin 상태변화 */}
-                        <form className = 'login__form' onSubmit={handleLogin}  >
+                        <form className = 'login__form' onSubmit={()=>{setSignIn(true)}}  >
                             <input type='text' placeholder='Email Address' />
                             <button>시작하기</button> 
                         </form>
@@ -37,7 +33,7 @@ function Login() {
                 }
             </div>    
             {/* onClick으로 signin 상태 변화 */}
-                <div className='login__gradient' onClick = {handleLogin}></div>
+                <div className='login__gradient' onClick = {()=>{setSignIn(false)}}></div>
         </div>
     )
 }
